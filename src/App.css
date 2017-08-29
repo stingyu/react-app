@@ -5,8 +5,10 @@
   background-color:#fff;
   margin:2em;
   padding: 0 1em;
-  min-height: 30em;
-  min-width:32em;
+  min-height: 32em;
+  min-width:20em;
   box-shadow: 0 1em 1em hsla(0,0%,0%,0.15);
 }
-
+.App > .todoList > li:nth-child(even) {
+  background:transparent;
+}

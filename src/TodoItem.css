@@ -1,0 +1,19 @@
+.TodoItem {
+    padding: .5em;
+    display: flex;
+    align-items: center;
+}
+.TodoItem > .title {
+    flex-grow: 1;
+    padding: 0.5em;
+}
+.TodoItem > .btn-del {
+    background-color: #fff;
+    color:#ccc;
+    border:1px solid #ccc;
+    border-radius:50%;
+    display: inline-block;
+    width:25px;
+    height:25px;
+    outline-style: none;
+}
