@@ -4,6 +4,7 @@ import 'normalize.css'
 import './reset.css'
 import TodoInput from './TodoInput'
 import TodoItem from './TodoItem'
+import * as localStorage from './localStorage'
 
 
 class App extends Component {
@@ -11,7 +12,7 @@ class App extends Component {
     super(props)
     this.state = {
       newTodo: '',
-      todoList: []
+      todoList: localStorage.load('todoList') || []
     }
   }
   render() {
@@ -27,7 +28,7 @@ class App extends Component {
             })
     return (
       <div className="App">
-        <h1>ToDoList</h1>
+        <h1>Todo List</h1>
         <div className = "inputWrapper">
           {/*注意value后面不要加引号*/}
           <TodoInput content={this.state.newTodo} 
@@ -39,6 +40,9 @@ class App extends Component {
         </ol>
       </div>
     )
+  }
+  componentDidUpdate() {
+    localStorage.save('todoList',this.state.todoList)
   }
   toggle(e,todo) {
     todo.status = todo.status === 'completed' ? '' : 'completed'
@@ -61,7 +65,6 @@ class App extends Component {
       newTodo: '',
       todoList:this.state.todoList
     })
-    
   }
   delete(event,todo) {
     todo.deleted = true
