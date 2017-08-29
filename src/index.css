@@ -1,14 +1,8 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color:#ccc;
-  color: #fff;
-  text-align: center;
+  background-color:#ddd;
 }
-#root2 {
-  margin-top: 120px;
-}
-.description {
-  margin-top: 50px;
+#root {
+ display:felx;
+ justify-content: center;
+ min-height: 100vh;
 }
